@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pomodoro Timer</title>
+  </head>
+  <body>
+    <div class="efeito-bg">
+      <section class="container">
+        <section class="container-pomodoro">
+          <div>
+            <button class="pomodoro-botoes ativado" type="button">
+              Pomodoro
+            </button>
+            <button class="pomodoro-botoes" type="button">
+              Intervalo Curto
+            </button>
+            <button class="pomodoro-botoes" type="button">
+              Intervalo Longo
+            </button>
+          </div>
+          <div>
+            <p id="timer">25:00</p>
+          </div>
+          <div>
+            <button id="comecar" class="pomodoro-botoes comecar" type="buttom">Começar</button>
+          </div>
+        </section>
+        <div class="divisor"></div>
+        <section class="tarefas">
+          <div>
+            <h1>Tarefas</h1>
+            <form>
+              <input
+                id="nova-tarefa"
+                type="text"
+                name="Nova Tarefa"
+                placeholder="Adicione uma nova tarefa"
+              />
+              <button id="adicionar-tarefa" type="button">+</button>
+            </form>
+          </div>
+          <div>
+            <ul id="lista-tarefas" class="lista-tarefas">
+              <li>
+                <div class="lista-item">
+                  <div>
+                    <div class="container-checkbox">
+                      <label for="checkbox-1">
+                        <input
+                          type="checkbox"
+                          class="input-checkbox"
+                          id="checkbox-1"
+                        />
+                        <div class="checkbox-customizado checked"></div>
+                      </label>
+                    </div>
+                    <p id="item-titulo">Nova Tarefa</p>
+                  </div>
+                  <div class="lista-icones">
+                    <button class="botao-acao">
+                      <img
+                        src="./assets/images/trash.svg"
+                        alt="Excluir tarefa"
+                      />
+                    </button>
+                    <button class="botao-acao">
+                      <img src="./assets/images/edit.svg" alt="Editar tarefa" />
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </div>
+  </body>
+</html>
