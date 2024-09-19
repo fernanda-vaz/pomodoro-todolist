@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-contexto="pomodoro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/?size=100&id=10063&format=png&color=0000000"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,6 +15,7 @@
       rel="stylesheet"
     />
     <script src="./assets/js/script.js" type="module" defer></script>
+    <script src="./assets/js/timer.js" defer></script>
     <title>Pomodoro Timer</title>
   </head>
   <body>
@@ -18,23 +23,40 @@
       <section class="container">
         <section class="container-pomodoro">
           <div>
-            <button class="pomodoro-botoes ativado" type="button">
+            <button class="pomodoro-botoes pomodoro ativado" type="button">
               Pomodoro
             </button>
-            <button class="pomodoro-botoes" type="button">
+            <button class="pomodoro-botoes intervalo-curto" type="button">
               Intervalo Curto
             </button>
-            <button class="pomodoro-botoes" type="button">
+            <button class="pomodoro-botoes intervalo-longo" type="button">
               Intervalo Longo
             </button>
           </div>
           <div>
-            <p id="timer">25:00</p>
+            <p id="timer"></p>
           </div>
           <div>
-            <button id="comecar" class="pomodoro-botoes comecar" type="buttom">
+            <button id="comecar-pausar" class="comecar-pausar" type="buttom">
               Começar
             </button>
+            <ul class="card-list">
+              <li class="card-list-item">
+                <label class="toggle">
+                  <input
+                    type="checkbox"
+                    id="alternar-musica"
+                    class="toggle-checkbox"
+                  />
+                  <div class="toggle-switch"></div>
+                </label>
+              </li>
+              <li class="card-list-item">
+                <label for="alternar-musica" class="card-list-label">
+                  Música
+                </label>
+              </li>
+            </ul>
           </div>
         </section>
         <div class="divisor"></div>
@@ -53,14 +75,10 @@
           </div>
 
           <div class="container-lista">
-            <ul id="lista-tarefas" class="lista-tarefas">
-              
-            </ul>
+            <ul id="lista-tarefas" class="lista-tarefas"></ul>
           </div>
           <div class="container-itens-concluidos">
-            <ul id="lista-concluidos">
-              
-            </ul>
+            <ul id="lista-concluidos"></ul>
           </div>
         </section>
       </section>

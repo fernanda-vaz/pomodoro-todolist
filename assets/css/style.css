@@ -19,12 +19,12 @@
 }
 
 body {
-  background-image: url("../images/background.png");
+  background-image: url("../images/background-2.jpg");
   background-size: 100vw 100vh;
 }
 
 .efeito-bg {
-  background-color: rgb(153 171 187 / 0.6);
+  background-color: rgba(145, 211, 220, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,151 +43,223 @@ body {
 }
 
 .container-pomodoro {
-    flex-basis: 50%;
-    text-align: center;
+  flex-basis: 50%;
+  text-align: center;
 }
 
 .pomodoro-botoes {
-    color: var(--cor-botao-texto-desabilitado);
-    background: var(--cor-botao-bg-desabilitado);
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 0 14px;
-    height: 40px;
-    margin: 0 0 15px 18px;
+  color: var(--cor-botao-texto-desabilitado);
+  background: var(--cor-botao-bg-desabilitado);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 14px;
+  height: 40px;
+  margin: 0 0 15px 18px;
 }
 
 .ativado {
-    background-color: var(--cor-botao-bg);
-    color: var(--cor-botao-texto);
+  background-color: var(--cor-botao-bg);
+  color: var(--cor-botao-texto);
 }
 
 .container-pomodoro p {
-    font-size: 6.5rem;
-    font-weight: bold;
-    margin: 30px;
+  font-size: 6.5rem;
+  font-weight: bold;
+  margin: 30px;
 }
 
-.comecar {
-    background-color: var(--cor-botao-bg);
-    color: var(--cor-botao-texto);
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    width: 200px;
-    height: 55px;
-    box-shadow: 0 2.5px rgb(0 0 0 / 0.5);
+.comecar-pausar {
+  background-color: var(--cor-botao-bg);
+  color: var(--cor-botao-texto);
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 200px;
+  height: 55px;
+  margin-bottom: 24px;
+  box-shadow: 0 2.5px rgb(0 0 0 / 0.5);
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.card-list-label {
+  color: var(--cor-botao-texto);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background: var(--cor-botao-bg-desabilitado);
+  border-radius: 24px;
+  width: 5.8rem;
+  height: 3.2rem;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+
+.toggle-switch::before,
+.toggle-switch::after {
+  content: "";
+}
+
+.toggle-switch::before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  left: 0.4rem;
+  transition: left 0.25s;
+}
+
+.toggle:hover .toggle-switch::before {
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+
+.toggle-checkbox:checked + .toggle-switch {
+  background: var(--cor-botao-bg);
+}
+
+.toggle-checkbox:checked + .toggle-switch::before {
+  left: 3rem;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
 }
 
 .divisor {
-    background-color: var(--cor-divisor);
-    height: 95%;
-    width: 1px;
-    margin-right: 12px;
+  background-color: var(--cor-divisor);
+  height: 95%;
+  width: 1px;
+  margin-right: 12px;
 }
 
 .tarefas {
-    flex-basis: 50%;
-    text-align: center;
+  flex-basis: 50%;
+  text-align: center;
 }
 
 .tarefas h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
+  font-size: 3rem;
+  margin-bottom: 30px;
 }
 
 .tarefas #nova-tarefa {
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid var(--cor-input-borda);
-    width: 350px;
-    outline: none;
-    padding: 15px 15px 5px 15px;
-    font-size: 1rem;
-    margin-bottom: 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--cor-input-borda);
+  width: 350px;
+  outline: none;
+  padding: 15px 15px 5px 15px;
+  font-size: 1rem;
+  margin-bottom: 12px;
 }
 
 .tarefas form input::placeholder {
-    color: var(--cor-placeholder);
+  color: var(--cor-placeholder);
 }
 
 .tarefas form button {
-    border-radius: 50%;
-    height: 16px;
-    width: 16px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    background: var(--cor-botao-bg);
-    margin-left: -36px;
-    align-items: center;
-    cursor: pointer;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  background: var(--cor-botao-bg);
+  margin-left: -36px;
+  align-items: center;
+  cursor: pointer;
 }
 
 ul {
-    list-style-type: none;
-    line-height: 20px;
+  list-style-type: none;
+  line-height: 20px;
 }
 
 .lista-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1rem;
-    gap: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  gap: 8px;
 }
 
 .lista-item div {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 .lista-item p {
-    line-height: 20px;
-    text-align: left;
+  line-height: 20px;
+  text-align: left;
 }
 
 .lista-icones {
-    display: flex;
-    gap: 5px;
-    margin-right: 12px;
+  display: flex;
+  gap: 5px;
+  margin-right: 12px;
 }
 
 .input-checkbox {
-    display: none;
+  display: none;
 }
 
 .checkbox-customizado {
-    width: 20px;
-    height: 20px;
-    background-color: var(--cor-botao-bg-desabilitado);
-    border: 1px solid var(--cor-botao-texto-desabilitado);
-    cursor: pointer;
-    border-radius: 4px;
-    margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--cor-botao-bg-desabilitado);
+  border: 1px solid var(--cor-botao-texto-desabilitado);
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 8px;
 }
 
 .checked {
-    background-color: var(--cor-botao-bg);
-    position: relative;
+  background-color: var(--cor-botao-bg);
+  position: relative;
 }
 
 .checkbox-customizado.checked::after {
-    content: "";
-    position: absolute;
-    left: 30%;
-    top: -10%;
-    width: 5px;
-    height: 14px;
-    border-top: 2px solid var(--cor-botao-texto);
-    border-left: 2px solid var(--cor-botao-texto);
-    transform: rotate(-140deg);
+  content: "";
+  position: absolute;
+  left: 30%;
+  top: -10%;
+  width: 5px;
+  height: 14px;
+  border-top: 2px solid var(--cor-botao-texto);
+  border-left: 2px solid var(--cor-botao-texto);
+  transform: rotate(-140deg);
 }
 
 .botao-acao {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
